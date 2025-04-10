@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.PeisongrenwuDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.PeisongrenwuEntity" id="peisongrenwuMap">
+        <result property="dingdanbianhao" column="dingdanbianhao"/>
+        <result property="caipinmingcheng" column="caipinmingcheng"/>
+        <result property="caipinfenlei" column="caipinfenlei"/>
+        <result property="caipintupian" column="caipintupian"/>
+        <result property="dingdanzonge" column="dingdanzonge"/>
+        <result property="shangjiabianhao" column="shangjiabianhao"/>
+        <result property="lianxidianhua" column="lianxidianhua"/>
+        <result property="xiadanshijian" column="xiadanshijian"/>
+        <result property="xiadanbeizhu" column="xiadanbeizhu"/>
+        <result property="dingdanzhuangtai" column="dingdanzhuangtai"/>
+        <result property="yonghuming" column="yonghuming"/>
+        <result property="xingming" column="xingming"/>
+        <result property="shouji" column="shouji"/>
+        <result property="dizhi" column="dizhi"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.PeisongrenwuVO" >
+		SELECT * FROM peisongrenwu  peisongrenwu         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.PeisongrenwuVO" >
+		SELECT  peisongrenwu.* FROM peisongrenwu  peisongrenwu 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.PeisongrenwuView" >
+
+		SELECT  peisongrenwu.* FROM peisongrenwu  peisongrenwu 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.PeisongrenwuView" >
+		SELECT * FROM peisongrenwu  peisongrenwu <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+</mapper>
